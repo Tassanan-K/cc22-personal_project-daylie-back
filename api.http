@@ -1,0 +1,72 @@
+@BASE_URL = http://localhost:3001
+
+### 1 POST Register /api/auth/register
+POST {{BASE_URL}}/api/auth/register
+Content-Type: application/json
+
+{
+    "username" : "Natalee",
+    "email" : "natalee@gamil.com",
+    "password": "111111",
+    "confirmPassword": "111111"
+}
+
+### 2 POST Login /api/auth/login
+POST {{BASE_URL}}/api/auth/login
+Content-Type: application/json
+
+{
+    "username" : "Natalee",
+    "password": "111111"
+}
+
+### 3 GET me /api/auth/me
+GET {{BASE_URL}}/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+
+### 4 PATCH me /api/auth/me
+PATCH {{BASE_URL}}/api/auth/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+
+{
+    "username" : "Danial_dan"
+}
+
+### 5 DELETE me /api/auth/me/:id
+DELETE {{BASE_URL}}/api/auth/me/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzc0MjQ4MTg5LCJleHAiOjE3NzY4NDAxODl9.1QK1RPeNEVXbltGslLdHWp3m0h0JWdrGu6AJrMH7Q4I
+
+
+### 6 POST diary /api/mydiary
+POST {{BASE_URL}}/api/mydiary
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+
+{
+    "title": "Bad day",
+    "content": "Badddd day TT"
+}
+
+### 7 GET mydiary /api/mydiary
+GET {{BASE_URL}}/api/mydiary
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+
+### 8 GET mydiary /api/mydiary/:id
+GET {{BASE_URL}}/api/mydiary/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+
+### 9 PATCH mydiary /api/mydiary/:id
+PATCH {{BASE_URL}}/api/mydiary/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+
+{
+    "title": "Happy Happy",
+    "content": "Happy Happy"
+}
+
+
+### 10 DELETE mydiary /api/mydiary/:id
+DELETE {{BASE_URL}}/api/mydiary/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzc0MjQ4MTg5LCJleHAiOjE3NzY4NDAxODl9.1QK1RPeNEVXbltGslLdHWp3m0h0JWdrGu6AJrMH7Q4I
