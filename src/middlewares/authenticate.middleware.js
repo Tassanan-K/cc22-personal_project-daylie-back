@@ -27,7 +27,7 @@ export default async function authenticate(req, res, next) {
 
     const {password, createdAt, updatedAt, ...userData} = foundUser
     req.user = userData
-    // console.log('req.user', req.user)
+    console.log('req.user', req.user)
 
     next()
 }

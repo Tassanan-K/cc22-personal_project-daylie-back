@@ -16,6 +16,40 @@ const userData = [
 
 ]
 
+// const iconInfo = [
+//     {
+//         name: 'veryhappy', icon: 'https://openmoji.org/data/color/svg/1F973.svg'
+//     },
+//     {
+//         name: 'happy', icon: 'https://openmoji.org/data/color/svg/1F603.svg'
+//     },
+//     {
+//         name: 'sad', icon: 'https://openmoji.org/data/color/svg/1F622.svg'
+//     },
+//     {
+//         name: 'bad-day', icon: 'https://openmoji.org/data/color/svg/1F641.svg'
+//     },
+//     {
+//         name: 'angry', icon: 'https://openmoji.org/data/color/svg/1F621.svg'
+//     },
+
+// ]
+
+const tagDefault = [
+    {
+        name: 'work'
+    },
+    {
+        name: 'travel'
+    },
+    {
+        name: 'family'
+    },
+    {
+        name: 'friend'
+    },
+]
+
 async function main() {
     console.log('clear table')
 
@@ -37,7 +71,19 @@ async function main() {
             data: userData,
             skipDuplicates: true
         })
-        console.log(`Created: ${createUser.count}`)
+
+        // const createIcon = await prisma.icon.createMany({
+        //     data: iconInfo,
+        //     skipDuplicates: true
+        // })
+
+        const createTag = await prisma.tag.createMany({
+            data: tagDefault,
+            skipDuplicates: true
+        })
+
+        // console.log(`Created: ${createUser.count}`)
+        // console.log(`CreatedIcon: ${createIcon.count}`)
     })
 }
 

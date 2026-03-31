@@ -1,12 +1,12 @@
 import express from 'express'
-import { CreateDiary, GetAllDiary, GetDiaryById, EditDiary, DeleteDiary} from '../controllers/diary.controller.js'
+import { CreateDiary, GetDiaryById, EditDiary, DeleteDiary, GetAllMyDiary} from '../controllers/diary.controller.js'
 import authenticate from '../middlewares/authenticate.middleware.js'
 
 const diaryRoute = express.Router()
 
 diaryRoute.post('/', authenticate, CreateDiary)
 
-diaryRoute.get('/', authenticate, GetAllDiary)
+diaryRoute.get('/', authenticate, GetAllMyDiary)
 
 diaryRoute.get('/:id', authenticate, GetDiaryById)
 

@@ -24,36 +24,41 @@ model User {
 }
 
 model Diary {
-  id        Int      @id @default(autoincrement())
-  title     String?
-  content   String?
-  CreatedAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId    Int?
-  tags      Tag[]
-  images    Image[]
-}
-
-model Mood {
-  id   Int    @id @default(autoincrement())
-  name String
-  icon String
+  id              Int        @id @default(autoincrement())
+  date            String
+  title           String?
+  content         String?
+  icon            String?
+  image           String?
+  img_description String?
+  CreatedAt       DateTime   @default(now())
+  updatedAt       DateTime   @default(now())
+  user            User?      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId          Int?
+  diary_tags      DiaryTag[]
+  // images     Image[]
 }
 
 model Tag {
-  id       Int      @id @default(autoincrement())
-  name     String?
-  createAt DateTime @default(now())
-  diary    Diary?   @relation(fields: [diaryId], references: [id], onDelete: Cascade)
-  diaryId  Int?
+  id         Int        @id @default(autoincrement())
+  name       String?
+  createAt   DateTime   @default(now())
+  diary_tags DiaryTag[]
 }
 
-model Image {
-  id          Int      @id @default(autoincrement())
-  url         String?
-  description String
-  createdAt   DateTime @default(now())
-  diary       Diary?   @relation(fields: [diaryId], references: [id], onDelete: Cascade)
-  diaryId     Int?
+model DiaryTag {
+  id      Int    @id @default(autoincrement())
+  diary   Diary? @relation(fields: [diaryId], references: [id], onDelete: Cascade)
+  diaryId Int?
+  tag     Tag?   @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  tagId   Int?
 }
+
+// model Image {
+//   id          Int      @id @default(autoincrement())
+//   url         String?
+//   description String?
+//   createdAt   DateTime @default(now())
+//   diary       Diary?   @relation(fields: [diaryId], references: [id], onDelete: Cascade)
+//   diaryId     Int?
+// }

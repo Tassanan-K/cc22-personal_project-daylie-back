@@ -1,12 +1,12 @@
-@BASE_URL = http://localhost:3001
+@BASE_URL = http://localhost:3002
 
 ### 1 POST Register /api/auth/register
 POST {{BASE_URL}}/api/auth/register
 Content-Type: application/json
 
 {
-    "username" : "Natalee",
-    "email" : "natalee@gamil.com",
+    "username" : "annabell",
+    "email" : "annabell@gamil.com",
     "password": "111111",
     "confirmPassword": "111111"
 }
@@ -16,57 +16,75 @@ POST {{BASE_URL}}/api/auth/login
 Content-Type: application/json
 
 {
-    "username" : "Natalee",
+    "username" : "annabell",
     "password": "111111"
 }
 
 ### 3 GET me /api/auth/me
 GET {{BASE_URL}}/api/auth/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzc0ODU4OTM5LCJleHAiOjE3Nzc0NTA5Mzl9.9x5mpvlVpCXQTCfUchEeVBOewKkeneN0v7hYJ_yDwAw
 
 ### 4 PATCH me /api/auth/me
 PATCH {{BASE_URL}}/api/auth/me
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzc0ODU4OTM5LCJleHAiOjE3Nzc0NTA5Mzl9.9x5mpvlVpCXQTCfUchEeVBOewKkeneN0v7hYJ_yDwAw
 
 {
     "username" : "Danial_dan"
 }
 
 ### 5 DELETE me /api/auth/me/:id
-DELETE {{BASE_URL}}/api/auth/me/5
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzc0MjQ4MTg5LCJleHAiOjE3NzY4NDAxODl9.1QK1RPeNEVXbltGslLdHWp3m0h0JWdrGu6AJrMH7Q4I
+DELETE {{BASE_URL}}/api/auth/me/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzc0ODU4OTM5LCJleHAiOjE3Nzc0NTA5Mzl9.9x5mpvlVpCXQTCfUchEeVBOewKkeneN0v7hYJ_yDwAw
 
 
 ### 6 POST diary /api/mydiary
 POST {{BASE_URL}}/api/mydiary
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzc0ODk4MTc5LCJleHAiOjE3Nzc0OTAxNzl9.aPxbVfCd1tgscEtkRhnKLQ7B5cG-z_3LljggGf5Z7Q4
 
 {
-    "title": "Bad day",
-    "content": "Badddd day TT"
+    "date": "25-03-26",
+    "title": "happy day 4",
+    "content": "happyyyyyyy",
+    "icon": "happy",
+    "tagId" : "4",
+    "image": "URL",
+    "img_description": "hello"
 }
 
 ### 7 GET mydiary /api/mydiary
 GET {{BASE_URL}}/api/mydiary
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzc0ODY1MjM1LCJleHAiOjE3Nzc0NTcyMzV9.e1iIEqGz5aEvvpkPgPOvg41XWBDPnSAyXgzHgJm-0aU
 
 ### 8 GET mydiary /api/mydiary/:id
-GET {{BASE_URL}}/api/mydiary/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+GET {{BASE_URL}}/api/mydiary/54
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzc0ODk4MTc5LCJleHAiOjE3Nzc0OTAxNzl9.aPxbVfCd1tgscEtkRhnKLQ7B5cG-z_3LljggGf5Z7Q4
 
 ### 9 PATCH mydiary /api/mydiary/:id
-PATCH {{BASE_URL}}/api/mydiary/2
+PATCH {{BASE_URL}}/api/mydiary/54
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzc0MjQ4MTA1LCJleHAiOjE3NzY4NDAxMDV9.SAh922G5rcdQz2-qn_zI89rX5yCHtugxEOvuEJNwg0Q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzc0ODk4MTc5LCJleHAiOjE3Nzc0OTAxNzl9.aPxbVfCd1tgscEtkRhnKLQ7B5cG-z_3LljggGf5Z7Q4
 
 {
-    "title": "Happy Happy",
+    "title": "Happy Happy D3",
     "content": "Happy Happy"
 }
 
 
 ### 10 DELETE mydiary /api/mydiary/:id
-DELETE {{BASE_URL}}/api/mydiary/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNzc0MjQ4MTg5LCJleHAiOjE3NzY4NDAxODl9.1QK1RPeNEVXbltGslLdHWp3m0h0JWdrGu6AJrMH7Q4I
+DELETE {{BASE_URL}}/api/mydiary/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzc0NTE3MjE3LCJleHAiOjE3NzcxMDkyMTd9.zUzuhNg-1OXsYIVLhLZbp25M7fDnoJnrLRxosENxlIA
+
+### 11 GET tags /api/tag
+GET {{BASE_URL}}/api/tag
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzc0NjA1ODY2LCJleHAiOjE3NzcxOTc4NjZ9.7wyzhYJOoDoCMPuN0ZKL4DWgqAsTpwbWnaynI6M3wtM
+
+### 12 POST New tag /api/tag
+POST {{BASE_URL}}/api/tag
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzc0NjA1ODY2LCJleHAiOjE3NzcxOTc4NjZ9.7wyzhYJOoDoCMPuN0ZKL4DWgqAsTpwbWnaynI6M3wtM
+
+{
+    "tagName" : "inlove"
+}

@@ -34,7 +34,7 @@ export async function Register(req, res, next) {
     })
 }
 
-export async function Login(req, res) {
+export async function Login(req, res, next) {
     //validation login
     const data = await loginSchema.parseAsync(req.body)
     console.log(data)
@@ -47,13 +47,13 @@ export async function Login(req, res) {
     console.log(foundUser)
 
     if(!foundUser) {
-        return next (createHttpError[401]('Invalid login 1'))
+        return next (createHttpError[401]('Invalid login'))
     }
 
     let correctedPassword = await bcrypt.compare(data.password, foundUser.password)
 
     if(!correctedPassword) {
-        return next(createHttpError[401]('Invalid login 2'))
+        return next(createHttpError[401]('Invalid login'))
     }
     
     //create token
@@ -68,7 +68,7 @@ export async function Login(req, res) {
     res.json({
         message: "Login successful",
         token: token,
-        body: userData
+        user: userData
     })
 }
 
@@ -115,7 +115,10 @@ export async function EditMe (req, res, next) {
     }
     // console.log('updatedata', updateData)
     await editUser(userId, updateData)
-    res.status(200).json({message: "Profile updated"})
+    res.status(200).json({
+        message: "Profile updated",
+        data: updateData
+    })
     } catch (error) {
         next(error)
     }
